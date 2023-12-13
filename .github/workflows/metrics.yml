@@ -1,8 +1,14 @@
 name: Metrics
 on:
   # Schedule 12h updates
-  schedule: [{cron: "* 12 * * *"}]
-  push: {branches: ["master"]}
+  schedule: [{cron: "10 * * * *"}]
+  push:
+    branches: [ "master" ]
+    # Publish semver tags as releases.
+    tags: [ 'v*.*.*' ]
+  pull_request:
+    branches: [ "master" ]
+  
 
   # (opt) Run workflow manually
   workflow_dispatch:
@@ -23,7 +29,7 @@ jobs:
 
           # git flow
           output_action: commit
-          committer_message: "🥳 Welcome aboard, deploy completed."
+          committer_message: "Foodtech foodie"
 
           clean_workflows: failure, startup_failure, cancelled
           delay: 1
