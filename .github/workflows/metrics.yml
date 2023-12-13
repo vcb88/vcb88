@@ -40,7 +40,7 @@ jobs:
           # config_padding: 10
 
           # whoami
-          user: duraki
+          user: vcb88
           template: classic
           base: header, activity, community, repositories, metadata
 
@@ -92,4 +92,4 @@ jobs:
           # you can use `id` a la base.header, base.activity+community, base.repositories ...
           # 
 
-  # authored by github.com/duraki
+   #authored by github.com/vcb88
