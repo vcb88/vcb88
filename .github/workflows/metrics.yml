@@ -1,7 +1,9 @@
 name: Metrics
 on:
   # Schedule 12h updates
-  schedule: [{cron: "10 1 * * *"}]
+  schedule: 
+    #- cron: "10 1 * * *"}]
+    - cron: "0 */6 * * *"  # Каждые 6 часов
 
   
 
@@ -21,10 +23,13 @@ jobs:
         with:
           # cacheup
           use_prebuilt_image: yes
+          commits_limit: 2000
+          
+          commits_days: 1000          
 
           # git flow
           output_action: commit
-          committer_message: "Foodtech foodie"
+          committer_message: "Metrics update"
 
           clean_workflows: failure, startup_failure, cancelled
           delay: 1
